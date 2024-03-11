@@ -38,8 +38,14 @@ def main():
                 else:
                     color = red
                 
+                word_name = word['word']
+                if word_name == 'cleaning':
+                    word_name = 'no cleaning fee'
+
+                
+                
                 # Constructing the string with 'word' in default color and 'score' in green
-                word_score_str = f"{word['word']}: {color}{word['score']}{reset}"
+                word_score_str = f"{word_name}: {color}{word['score']}{reset}"
                 
                 # Using the output function to print with magenta as a placeholder color
                 # Since we are manually handling color codes here, the color passed to output is not used for the word and score

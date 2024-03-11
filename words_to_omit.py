@@ -42,7 +42,34 @@ words_to_omit_list = [
     'ridgewood',
     'madison',
     'hamilton',
-    'woodside'
+    'woodside',
+    'e',
+    'an',
+    'r',
+    'g',
+    'st',
+    'soho',
+    'bk',
+    'laguardia',
+    'for',
+    'be',
+    'bklyn',
+    'it',
+    'just',
+    'freeman',
+    'l',
+    'd',
+    'bd',
+    'ues',
+    'bd',
+    'bldg',
+    'la',
+    'f',
+    'wall'
+    'roosevelt',
+    'williamsburg',
+    'uws',
+    'blueground'
 ]
 
 words_to_omit = set(words_to_omit_list)

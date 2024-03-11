@@ -3,7 +3,7 @@ import re
 from words_to_omit import words_to_omit
 
 # the minimum amount of times a word must appear in the dataset to be considered
-minimum_word_quantity = 100
+minimum_word_quantity = 75
 
 def logistic_regression(listings):
     word_to_reviews_per_month = defaultdict(list)
@@ -30,9 +30,9 @@ def logistic_regression(listings):
 
             word_to_reviews_per_month[word].append(reviews_per_month)
         
-    # calculate the average reviews per month for each word
-    word_scores = {}
+    # get the highest average reviews per month
     highest_avg_reviews_per_month = 0
+    word_to_avg_reviews_per_month = {}
     for word, reviews in word_to_reviews_per_month.items():
         # if the word appears less than the minimum amount of times, skip it
         if len(reviews) < minimum_word_quantity:
@@ -44,7 +44,12 @@ def logistic_regression(listings):
         if average_reviews_per_month > highest_avg_reviews_per_month:
             highest_avg_reviews_per_month = average_reviews_per_month
 
-        score = (average_reviews_per_month / highest_avg_reviews_per_month) * 10
+        word_to_avg_reviews_per_month[word] = average_reviews_per_month
+
+    # calculate the average reviews per month for each word
+    word_scores = {}
+    for word, avg in word_to_avg_reviews_per_month.items():
+        score = (avg / highest_avg_reviews_per_month) * 10
         word_scores[word] = round(score, 2)
 
     # Convert dictionary to a list of dictionaries with 'word' and 'score' keys
