@@ -21,18 +21,29 @@ def main():
         if choice == '1':
             output('blue', '<----------------------------------------->')
             output('magenta', 'TOP KEYWORDS FOR LISTING TITLES')
-            for word in sorted_scores[:100]:
+            for word in sorted_scores:
                 # ANSI escape code for green and to reset the color
                 green = "\033[92m"
+                yellow = "\033[93m"
+                red = "\033[91m"
+                magenta = "\033[35m"
                 reset = "\033[0m"
+
+                if word['score'] > 7:
+                    color = green
+                elif word['score'] > 5:
+                    color = yellow
+                elif word['score'] > 3:
+                    color = magenta
+                else:
+                    color = red
                 
                 # Constructing the string with 'word' in default color and 'score' in green
-                word_score_str = f"{word['word']}: {green}{word['score']}{reset}"
+                word_score_str = f"{word['word']}: {color}{word['score']}{reset}"
                 
                 # Using the output function to print with magenta as a placeholder color
                 # Since we are manually handling color codes here, the color passed to output is not used for the word and score
                 print(word_score_str)
             output('blue', '<----------------------------------------->')
-
 
 main()

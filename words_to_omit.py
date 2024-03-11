@@ -28,4 +28,6 @@ words_to_omit = [
     'brownstone',
     'queens',
     'w',
+    'j',
+    'pre'
 ]
