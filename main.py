@@ -1,6 +1,8 @@
 from read_csv import read_csv
 
+dataset = read_csv('dataset.csv')
+
 def main():
-    data = read_csv('data.csv')
+    pass
 
 main()
