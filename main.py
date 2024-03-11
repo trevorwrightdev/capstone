@@ -1,9 +1,11 @@
 from read_csv import read_csv
 from algorithm import logistic_regression
 
-dataset = read_csv('dataset.csv')
+# read the csv file and get a list of dictionaries 
+listings = read_csv('dataset.csv')
 
 def main():
-    pass
+    # call the logistic_regression function and pass the dataset
+    word_scores = logistic_regression(listings)
 
 main()
