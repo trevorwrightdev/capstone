@@ -24,4 +24,8 @@ words_to_omit = [
     'nyc',
     'in',
     'min',
+    'manhattan',
+    'brownstone',
+    'queens',
+    'w',
 ]
