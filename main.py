@@ -7,5 +7,5 @@ listings = read_csv('dataset.csv')
 def main():
     # call the logistic_regression function and pass the dataset
     word_scores = logistic_regression(listings)
-
+    print(word_scores)
 main()
