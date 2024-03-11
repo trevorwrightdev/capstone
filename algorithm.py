@@ -5,10 +5,6 @@ import re
 minimum_word_quantity = 1
 
 def logistic_regression(listings):
-    # ! TESTING ONLY
-    listings = listings[:10]
-    # !
-
     word_to_reviews_per_month = defaultdict(list)
     # iterate through the listings
     for listing in listings:
@@ -18,21 +14,32 @@ def logistic_regression(listings):
         if not reviews_per_month:
             continue
 
+        # convert the string to a float
+        reviews_per_month = float(reviews_per_month)
+
         title = listing['NAME']
 
         # Split the string based on non-letter characters
         words = [word.lower() for word in re.findall(r'\b[a-zA-Z]+\b', title)]
         # iterate through the words
         for word in words:
-            word_to_reviews_per_month[word].append(float(reviews_per_month))
-            pass
+            word_to_reviews_per_month[word].append(reviews_per_month)
         
     # calculate the average reviews per month for each word
     word_scores = {}
+    highest_avg_reviews_per_month = 0
     for word, reviews in word_to_reviews_per_month.items():
         # if the word appears less than the minimum amount of times, skip it
         if len(reviews) < minimum_word_quantity:
             continue
-        word_scores[word] = sum(reviews) / len(reviews)
+        # calculate the average reviews per month for the word
+        average_reviews_per_month = sum(reviews) / len(reviews)
+
+        # if the average reviews per month is the highest so far, update the variable
+        if average_reviews_per_month > highest_avg_reviews_per_month:
+            highest_avg_reviews_per_month = average_reviews_per_month
+
+        score = (average_reviews_per_month / highest_avg_reviews_per_month) * 10
+        word_scores[word] = round(score, 2)
     
     return word_scores
