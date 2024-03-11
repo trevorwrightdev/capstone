@@ -1,5 +1,6 @@
 from collections import defaultdict
 import re
+from words_to_omit import words_to_omit
 
 # the minimum amount of times a word must appear in the dataset to be considered
 minimum_word_quantity = 100
@@ -23,6 +24,10 @@ def logistic_regression(listings):
         words = re.findall(r'\b[a-zA-Z]+\b', title)
         # iterate through the words
         for word in words:
+            # if the word is in the words_to_omit list, skip it
+            if word in words_to_omit:
+                continue
+
             word_to_reviews_per_month[word].append(reviews_per_month)
         
     # calculate the average reviews per month for each word
