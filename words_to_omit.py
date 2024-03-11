@@ -1,4 +1,4 @@
-words_to_omit = [
+words_to_omit_list = [
     'lga',
     'b',
     'the',
@@ -29,5 +29,20 @@ words_to_omit = [
     'queens',
     'w',
     'j',
-    'pre'
+    'pre',
+    'tribeca',
+    'wyndham',
+    'murray',
+    'lincoln',
+    'washington',
+    'ditmas',
+    'gramercy',
+    'columbus',
+    'greenwich',
+    'ridgewood',
+    'madison',
+    'hamilton',
+    'woodside'
 ]
+
+words_to_omit = set(words_to_omit_list)
