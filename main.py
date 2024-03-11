@@ -6,6 +6,6 @@ listings = read_csv('dataset.csv')
 
 def main():
     # call the logistic_regression function and pass the dataset
-    word_scores = logistic_regression(listings)
-    print(word_scores)
+    [word_scores, sorted_scores] = logistic_regression(listings)
+    print(sorted_scores[:100])
 main()
