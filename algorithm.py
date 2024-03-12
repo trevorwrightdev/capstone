@@ -56,6 +56,6 @@ def logistic_regression(listings):
     word_list = [{"word": word, "score": score} for word, score in word_scores.items()]
 
     # Sort the list by 'score' in descending order
-    word_list_sorted = sorted(word_list, key=lambda x: x['score'], reverse=True)
+    word_list_sorted = sorted(word_list, key=lambda x: x['score'], reverse=False)
     
     return [word_scores, word_list_sorted]

@@ -21,7 +21,8 @@ def main():
         if choice == '1':
             output('blue', '<----------------------------------------->')
             output('magenta', 'TOP KEYWORDS FOR LISTING TITLES')
-            for i, word in enumerate(sorted_scores):
+            count = len(sorted_scores)
+            for word in sorted_scores:
                 # ANSI escape code for green and to reset the color
                 green = "\033[92m"
                 yellow = "\033[93m"
@@ -44,7 +45,9 @@ def main():
                     word_name = 'no cleaning fee'
                 
                 # Constructing the string with 'word' in default color and 'score' in green
-                word_score_str = f"{i + 1} {blue}{word_name}{reset}: {color}{word['score']}{reset}"
+                word_score_str = f"{count} {blue}{word_name}{reset}: {color}{word['score']}{reset}"
+
+                count -=1
                 
                 # Using the output function to print with magenta as a placeholder color
                 # Since we are manually handling color codes here, the color passed to output is not used for the word and score

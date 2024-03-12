@@ -78,6 +78,10 @@ words_to_omit_list = [
     'stuy',
     'york',
     'carroll',
+    'q',
+    'or',
+    'our',
+    'staten'
 ]
 
 words_to_omit = set(words_to_omit_list)
