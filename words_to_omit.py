@@ -69,7 +69,9 @@ words_to_omit_list = [
     'roosevelt',
     'williamsburg',
     'uws',
-    'blueground'
+    'blueground',
+    'wburg',
+    'en'
 ]
 
 words_to_omit = set(words_to_omit_list)
