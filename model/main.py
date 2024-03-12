@@ -63,6 +63,5 @@ def main():
             else:
                 output('red', f'The keyword "{capitalize(keyword)}" is not found in the dataset')
             output('blue', '<----------------------------------------->')
-            
 
 main()
