@@ -1,0 +1,28 @@
+import Image from 'next/image'
+import barGraph from '../../public/bar-graph.png'
+import wordCloud from '../../public/word-cloud.png'
+
+export default function Data() {
+    return (
+        <div className='py-32 w-full flex flex-col text-white gap-4 lg:px-64 px-8 items-center'>
+            <div className='flex flex-col items-center gap-2 w-[90%] md:w-[600px]'>
+                <Image
+                    className='w-full rounded-md'
+                    src={barGraph}
+                    width={1024}
+                    height={768}
+                />
+                <p className='text-white text-center'>Bar Graph</p>
+            </div>
+            <div className='flex flex-col items-center gap-2 w-[90%] md:w-[600px]'>
+                <Image
+                    className='w-full rounded-md'
+                    src={wordCloud}
+                    width={2560}
+                    height={1440}
+                />
+                <p className='text-white text-center'>Word Cloud</p>
+            </div>
+        </div>
+    )
+}

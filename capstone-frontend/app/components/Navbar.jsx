@@ -37,6 +37,12 @@ export default function Example() {
                     Top Words
                 </Link>
                 <Link
+                    href="/data"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-white"
+                    >
+                    Data
+                </Link>
+                <Link
                     href="/about"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-white"
                     >
