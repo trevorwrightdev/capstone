@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <div className='py-32 w-full flex flex-col text-white gap-4 px-64'>
+        <div className='py-32 w-full flex flex-col text-white gap-4 lg:px-64 px-8'>
             <h1 className='text-2xl md:text-4xl'>
                 Airbnb Keyword Analysis Tool
             </h1>
