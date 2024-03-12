@@ -34,7 +34,7 @@ export default function Data() {
                     width={2560}
                     height={1440}
                 />
-                <p className='text-white text-center'>Pie graph showing the dominance of the top 30% of words in the dataset</p>
+                <p className='text-white text-center'>Pie chart showing the dominance of the top 30% of words in the dataset</p>
             </div>
         </div>
     )
