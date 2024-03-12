@@ -15,3 +15,8 @@ def output(color, string):
     
     # Print the string in the specified color
     print(f"{color_code}{string}{colors['end']}")
+
+def capitalize(word):
+    if word:
+        return word[0].upper() + word[1:]
+    return word

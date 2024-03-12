@@ -1,6 +1,6 @@
 from read_csv import read_csv
 from algorithm import logistic_regression
-from output import output
+from output import output, capitalize
 
 # read the csv file and get a list of dictionaries 
 listings = read_csv('dataset.csv')
@@ -47,7 +47,7 @@ def main():
                     word_name = 'private entry'
                 
                 # Constructing the string with 'word' in default color and 'score' in green
-                word_score_str = f"{count} {blue}{word_name}{reset}: {color}{word['score']}{reset}"
+                word_score_str = f"{count} {blue}{capitalize(word_name)}{reset}: {color}{word['score']}{reset}"
 
                 count -=1
                 
@@ -55,5 +55,14 @@ def main():
                 # Since we are manually handling color codes here, the color passed to output is not used for the word and score
                 print(word_score_str)
             output('blue', '<----------------------------------------->')
+        elif choice == '2':
+            keyword = input('Enter the keyword: ').lower()
+            output('blue', '<----------------------------------------->')
+            if keyword in word_scores:
+                output('green', f'The score for "{capitalize(keyword)}" is {word_scores[keyword]}')
+            else:
+                output('red', f'The keyword "{capitalize(keyword)}" is not found in the dataset')
+            output('blue', '<----------------------------------------->')
+            
 
 main()

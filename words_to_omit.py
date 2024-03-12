@@ -81,7 +81,11 @@ words_to_omit_list = [
     'q',
     'or',
     'our',
-    'staten'
+    'staten',
+    'barclays',
+    'i',
+    'les',
+    'ft'
 ]
 
 words_to_omit = set(words_to_omit_list)
