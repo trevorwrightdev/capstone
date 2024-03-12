@@ -11,6 +11,9 @@ export default function Home() {
     const [lastKeyword, setLastKeyword] = useState('')
     const [score, setScore] = useState(0)
     const [errorMessage, setErrorMessage] = useState('')
+    const [color, setColor] = useState({
+        color: 'white',
+    })
 
     function submit() {
         setErrorMessage('')
@@ -24,6 +27,24 @@ export default function Home() {
         if (score === undefined) {
             setErrorMessage('That keyword is not in our database.')
             return
+        }
+
+        if (score > 7) {
+            setColor({
+                color: 'green',
+            })
+        } else if (score > 5) {
+            setColor({
+                color: 'yellow',
+            })
+        } else if (score > 3) {
+            setColor({
+                color: 'orange',
+            })
+        } else {
+            setColor({
+                color: 'red',
+            })
         }
 
         setLastKeyword(keyword)
@@ -49,7 +70,7 @@ export default function Home() {
                                 className='min-w-0 flex-auto rounded-md border-0 bg-white/10 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-white/75 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6'
                                 placeholder='Enter a keyword'
                                 value={keyword}
-                                onChange={(e) => setKeyword(e.target.value)}
+                                onChange={e => setKeyword(e.target.value)}
                             />
                             <button
                                 type='submit'
@@ -64,13 +85,13 @@ export default function Home() {
             </div>
             {lastKeyword && !errorMessage && (
                 <p className='text-white text-3xl'>
-                    The score for {lastKeyword} is {score}
+                    The score for{' '}
+                    <span className='text-black'>{lastKeyword}</span> is{' '}
+                    <span style={color}>{score}</span>
                 </p>
             )}
             {errorMessage && (
-                <p className='text-red-400 text-3xl'>
-                    {errorMessage}
-                </p>
+                <p className='text-red-400 text-3xl'>{errorMessage}</p>
             )}
         </div>
     )
