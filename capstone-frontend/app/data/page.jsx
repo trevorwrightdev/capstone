@@ -6,6 +6,9 @@ import pieChart from '../../public/pie-chart.png'
 export default function Data() {
     return (
         <div className='py-32 w-full flex flex-col text-white gap-4 lg:px-64 px-8 items-center'>
+            <p className='text-white text-center max-w-[600px] mb-10'>
+                The following is a set of diagrams that quantify the effectiveness of certain keywords in Airbnb listing titles.
+            </p>
             <div className='flex flex-col items-center gap-2 w-[90%] md:w-[600px]'>
                 <Image
                     className='w-full rounded-md'
