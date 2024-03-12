@@ -83,17 +83,15 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className='text-center'>
+            <div className='text-center text-xl md:text-3xl'>
                 {lastKeyword && !errorMessage && (
-                    <p className='text-white text-3xl'>
+                    <p className='text-white'>
                         The score for{' '}
                         <span className='text-black'>{lastKeyword}</span> is{' '}
                         <span style={color}>{score}</span>
                     </p>
                 )}
-                {errorMessage && (
-                    <p className='text-red-400 text-xl md:text-3xl'>{errorMessage}</p>
-                )}
+                {errorMessage && <p className='text-red-400'>{errorMessage}</p>}
             </div>
         </div>
     )
