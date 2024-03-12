@@ -4,10 +4,6 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
 export default function Example() {
   return (
     <Disclosure as="nav" className="bg-[#2d258a] shadow fixed w-full">
@@ -35,6 +31,12 @@ export default function Example() {
                     Home
                 </Link>
                 <Link
+                    href="/topwords"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-white"
+                  >
+                    Top Words
+                </Link>
+                <Link
                     href="/about"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-white"
                     >
@@ -47,7 +49,6 @@ export default function Example() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-4 pt-2">
-              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-white hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
               <Disclosure.Button
                 as="a"
                 href="#"

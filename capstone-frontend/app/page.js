@@ -22,8 +22,10 @@ export default function Home() {
             return
         }
 
-        const score = getWordScore(keyword)
+        const keywordLower = keyword.toLowerCase()
 
+        const score = getWordScore(keywordLower)
+        
         if (score === undefined) {
             setErrorMessage('That keyword is not in our database.')
             return
@@ -47,7 +49,7 @@ export default function Home() {
             })
         }
 
-        setLastKeyword(keyword)
+        setLastKeyword(keywordLower)
         setScore(score)
     }
 
