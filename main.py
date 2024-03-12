@@ -43,6 +43,8 @@ def main():
                 word_name = word['word']
                 if word_name == 'cleaning':
                     word_name = 'no cleaning fee'
+                elif word_name == 'entry':
+                    word_name = 'private entry'
                 
                 # Constructing the string with 'word' in default color and 'score' in green
                 word_score_str = f"{count} {blue}{word_name}{reset}: {color}{word['score']}{reset}"
