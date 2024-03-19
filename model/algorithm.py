@@ -5,7 +5,7 @@ from words_to_omit import words_to_omit
 # the minimum amount of times a word must appear in the dataset to be considered
 minimum_word_quantity = 75
 
-def logistic_regression(listings):
+def algorithm(listings):
     word_to_reviews_per_month = defaultdict(list)
     # iterate through the listings
     for listing in listings:

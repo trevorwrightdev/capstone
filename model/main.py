@@ -1,5 +1,5 @@
 from read_csv import read_csv
-from algorithm import logistic_regression
+from algorithm import algorithm
 from output import output, capitalize
 import json
 
@@ -7,8 +7,7 @@ import json
 listings = read_csv('dataset.csv')
 
 def main():
-    # call the logistic_regression function and pass the dataset
-    [word_scores, sorted_scores] = logistic_regression(listings)
+    [word_scores, sorted_scores] = algorithm(listings)
 
     # * This code is for writing the word_scores and sorted_scores to a JSON file. 
     # with open('word_scores.json', 'w') as outfile:
